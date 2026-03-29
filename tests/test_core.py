@@ -65,10 +65,10 @@ class TestTaktik:
 
 class TestRouter:
 
-    def test_math_routes_to_cot(self):
+    def test_math_routes_to_pot_or_cot(self):
         tk = Taktik(llm=mock_llm)
         result = tk.run("Calculate 15% of 240")
-        assert result.technique_used == "cot"
+        assert result.technique_used in ("cot", "pot")  # pot preferred if available
 
     def test_simple_routes_to_direct(self):
         tk = Taktik(llm=mock_llm)

@@ -109,8 +109,14 @@ def _default_techniques() -> dict[str, Technique]:
     from taktik.techniques.direct import Direct
     from taktik.techniques.cot import ChainOfThought
     from taktik.techniques.self_consistency import SelfConsistency
+    from taktik.techniques.pot import ProgramOfThought
+    from taktik.techniques.self_refine import SelfRefine
+    from taktik.techniques.decompose import Decompose
     return {
         "direct": Direct(),
         "cot": ChainOfThought(),
         "self_consistency": SelfConsistency(),
+        "pot": ProgramOfThought(),
+        "self_refine": SelfRefine(),
+        "decompose": Decompose(),
     }
